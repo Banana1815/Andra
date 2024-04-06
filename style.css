@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('font/K22\ Spotty\ Face.ttf');
+    /* También puedes incluir otros formatos de fuente como woff, woff2, eot, svg, etc. para compatibilidad con diferentes navegadores */
+  }
+  
+  /* Luego puedes utilizar la fuente en cualquier selector */
+  .title{
+    font-family: 'MiFuentePersonalizada', sans-serif; /* Usamos la fuente definida con @font-face y, si no está disponible, una fuente genérica */
+  color: red;}
+  
