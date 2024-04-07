@@ -1,42 +1,44 @@
-class Character {
-    constructor(name, house, spellPower){
+class Fruit {
+    constructor(name, color, season) {
 
-        this.name = name
-        this.house = house
-        this.spellPower = spellPower
-        this.healt = 100 
+        this._name = name
+        this._color = color
+        this._season = season 
 
     }
 
-    displayInfo() {
-        console.log(`Name: ${this.name}`)
-        console.log(`House: ${this.house}`)
-        console.log(`Spell Power ${this.spellPower}`)
-        console.log(`Healt: ${this.healt}`)
-        console.log(".............................")
-    }
 
-    castSpell(target) {
-        console.log(`${this.name} casts a spell on ${target.name}!`)
-        const spellDamage = this.spellPower * (Math.floor(mat.random() * 5) +1)
-        console.log(`${target.name} loses ${spellDamage} health points!`)
-        target.healt -= spellDamage
-        console.log(`${target.name}'s remaining healt: ${target.healt}`)
-        console.log(".............................") 
-    }
+get name () {
+    return this._name
+
 }
 
-const harry = new Character("Harry Potter", "Gryffindor", 20)
-const hermione = new Character("Hermione Granger", "Griffindor", 25)
-const draco = new Character("Draco Malfoy", "Slytherin", 25)
+set name (newName){
+    this._name = newName
+}
+get color () {
+    return this._color 
+}
 
+set color (newColor){
+    this._color = newColor
 
-console.log ("Harry Potter Characters Information:")
-harry.displayInfo()
-hermione.displayInfo()
-draco.displayInfo()
+}
+get season () {
+    return this._season
+}
+set season (newSeason){
+    this._season = newSeason
 
-console.log("The Duel Begins:")
-harry.castSpell(draco)
+}
 
+describe (){
+    return `the ${this._name} is ${this._color} , and is typically available in ${this._season} `
 
+}
+}
+
+const kiwi = new Fruit ("kiwi", "green", "october")
+console.log(kiwi.describe()) ;
+kiwi.season = "summer"
+console.log (kiwi.describe())
